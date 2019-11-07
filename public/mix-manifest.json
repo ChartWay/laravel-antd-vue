@@ -1,6 +1,6 @@
 {
-    "/js/main.js": "/js/main.js?id=240f983a3fd9dfb1bed0",
-    "/fail.js": "/fail.js?id=5331f54a67b4f52a732f",
-    "/result.js": "/result.js?id=95f35a00a7f7772f8555",
-    "/user.js": "/user.js?id=e780850cfc1ce84715b7"
+    "/js/main.js": "/js/main.js?id=d2e6ab914c9694f8200c",
+    "/js/lazy/fail.0f08a9f0255d781ffdf8.js": "/js/lazy/fail.0f08a9f0255d781ffdf8.js?id=5331f54a67b4f52a732f",
+    "/js/lazy/result.759b138f23891eeedd89.js": "/js/lazy/result.759b138f23891eeedd89.js?id=95f35a00a7f7772f8555",
+    "/js/lazy/user.5e6b937dde2beb2c75e6.js": "/js/lazy/user.5e6b937dde2beb2c75e6.js?id=53a96f86d0feec375e87"
 }

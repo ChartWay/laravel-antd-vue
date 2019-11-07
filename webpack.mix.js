@@ -12,39 +12,43 @@ const mix = require('laravel-mix');
  */
 
 mix.webpackConfig({
-    resolve: {
-        alias: {
-            '@': path.resolve(__dirname, 'resources/src'),
-            '@assets': path.resolve(__dirname, 'resources/src/assets'),
-            '@comp': path.resolve(__dirname, 'resources/src/components'),
-            '@views': path.resolve(__dirname, 'resources/src/views'),
-            '@layout': path.resolve(__dirname, 'resources/src/layout'),
-            '@static': path.resolve(__dirname, 'resources/src/static'),
-        }
-    },
-    module: {
-        rules: [
-            {
-                test: /\.less$/,
-                loader: require.resolve('less-loader'), // compiles Less to CSS
-                options: {
-                    javascriptEnabled: true
-                }
-            }
-        ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'resources/src'),
+      '@assets': path.resolve(__dirname, 'resources/src/assets'),
+      '@comp': path.resolve(__dirname, 'resources/src/components'),
+      '@views': path.resolve(__dirname, 'resources/src/views'),
+      '@layout': path.resolve(__dirname, 'resources/src/layout'),
+      '@static': path.resolve(__dirname, 'resources/src/static'),
     }
-});
+  },
+  module: {
+    rules: [
+      {
+        test: /\.less$/,
+        loader: require.resolve('less-loader'), // compiles Less to CSS
+        options: {
+          javascriptEnabled: true
+        }
+      }
+    ]
+  },
+  output: {
+    publicPath: '/',
+    chunkFilename: 'js/lazy/[name].[chunkhash].js'
+  }
+})
 
 mix.babelConfig({
-    presets: [
-        '@vue/app',
-        [
-            '@babel/preset-env',
-            {
-                'useBuiltIns': 'entry'
-            }
-        ]
+  presets: [
+    '@vue/app',
+    [
+      '@babel/preset-env',
+      {
+        'useBuiltIns': 'entry'
+      }
     ]
-});
+  ]
+})
 
-mix.js('resources/src/main.js', 'public/js').version();
+mix.js('resources/src/main.js', 'public/js').version()
